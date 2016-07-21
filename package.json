@@ -1,0 +1,28 @@
+{
+  "name": "meow-cli",
+  "version": "0.0.1",
+  "description": "Opinionated Frontend Cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rainforestapp/meow-cli.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "cli"
+  ],
+  "author": "Rainforest QA Engineering",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rainforestapp/meow-cli/issues"
+  },
+  "homepage": "https://github.com/rainforestapp/meow-cli#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "inquirer": "^1.1.2"
+  }
+}
