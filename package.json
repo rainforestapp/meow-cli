@@ -23,6 +23,8 @@
   "homepage": "https://github.com/rainforestapp/meow-cli#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
-    "inquirer": "^1.1.2"
+    "fs-extra": "^0.30.0",
+    "inquirer": "^1.1.2",
+    "lodash": "^4.13.1"
   }
 }
