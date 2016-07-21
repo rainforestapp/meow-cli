@@ -1,7 +1,7 @@
 jest.unmock('../reducer');
 import reducer from '../reducer';
 
-describe('Some Actions', () => {
+describe('<<name>> reducer', () => {
   beforeEach(() => {
     // mock and setup stuff here
   });

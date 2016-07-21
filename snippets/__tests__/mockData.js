@@ -1,1 +1,4 @@
-export default {};
+const <<name>>MockData = {
+};
+
+export default <<name>>MockData;

@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 
-export const SomeComponent = () => (
+export const <<name>> = () => (
   <div>Hello</div>
 );
 
-export default SomeComponent;
+export default <<name>>;

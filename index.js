@@ -3,6 +3,7 @@ const fs = Promise.promisifyAll(require('fs-extra'));
 const inquirer = require('inquirer');
 const prompt = inquirer.createPromptModule();
 const path = require('path');
+const template = require('lodash/template');
 const pick = require('lodash/pick');
 const flatten = require('lodash/flatten');
 
@@ -74,6 +75,7 @@ prompt([
 ]).then(questions => {
   const folderPath = path.join(process.cwd(), questions.name);
   const files = flatten(questions.files);
+  files.push('/index.jsx');
 
   return fs.mkdirAsync(folderPath)
   .catch((err) => {
@@ -86,14 +88,19 @@ prompt([
   .then(() => fs.mkdirAsync(path.join(folderPath, '__tests__')))
   .then(() => 
     Promise.all(files.map((file) => (
-      fs.copyAsync(
-        path.join(__dirname, 'snippets', file),
-        path.join(process.cwd(), questions.name, file)
-      )
+      fs.readFileAsync(path.join(__dirname, 'snippets', file))
+      .then((fileContent) => (
+        template(fileContent.toString(), { interpolate: /<<([\s\S]+?)>>/g })(questions)
+      ))
+      .then(fileContent => (
+        fs.writeFileAsync(path.join(process.cwd(), questions.name, file), fileContent)
+      ))
     )))
    )
    .then(() => {
-     console.log('DONE!');
+     console.log('---------------------');
+     console.log('--------DONE!--------');
+     console.log('---------------------');
    });
 });
 

@@ -1,7 +1,7 @@
 jest.unmock('../actions');
 import * as actions from '../actions';
 
-describe('Some Actions', () => {
+describe('<<name>> Actions', () => {
   beforeEach(() => {
     // mock and setup stuff here
   });

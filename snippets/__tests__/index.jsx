@@ -4,9 +4,9 @@ import { SomeComponent } from '../';
 
 let props, comp;
 
-describe('SomeComponent', () => {
+describe('<<name>>', () => {
   beforeEach(() => {
-    comp = shallow(<SomeComponent {...props} />);
+    comp = shallow(<<<name>> {...props} />);
   });
 
   it('renders', () => {
